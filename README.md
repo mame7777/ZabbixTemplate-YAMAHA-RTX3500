@@ -1,0 +1,1 @@
+# ZabbixTemplate-YAMAHA-RTX3500
