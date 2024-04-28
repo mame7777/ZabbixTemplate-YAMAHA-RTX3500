@@ -1,0 +1,303 @@
+zabbix_export:
+  version: '6.0'
+  date: '2024-04-28T06:58:01Z'
+  groups:
+    -
+      uuid: 7df96b18c230490a9a0a9e2307226338
+      name: Templates
+  templates:
+    -
+      uuid: 1d1855e99b2b4230989c246a33419a49
+      template: Temp_RTX3500
+      name: Temp_RTX3500
+      groups:
+        -
+          name: Templates
+      items:
+        -
+          uuid: 86c944171d884abeb58f95dabef81e2d
+          name: RTX3500_LAN1-IN
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.10.1
+          key: ifInOctets.1
+          delay: 60s
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+        -
+          uuid: 24c31f2063ed44d6a12fd30139c29d3a
+          name: RTX3500_LAN2-IN
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.10.2
+          key: ifInOctets.2
+          delay: 60s
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+        -
+          uuid: c2ffa300620b4a93b4331b9e4ed3ff82
+          name: RTX3500_LAN3-IN
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.10.3
+          key: ifInOctets.3
+          delay: 60s
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+        -
+          uuid: 67df0d6f74094637b183819dc3163761
+          name: RTX3500_LAN4-IN
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.10.4
+          key: ifInOctets.4
+          delay: 60s
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+        -
+          uuid: f754ddc2437847afbad10993eac521af
+          name: RTX3500_LAN1-OUT
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.16.1
+          key: ifOutOctets.1
+          delay: 60s
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+        -
+          uuid: 503125a61425453b851e708d7d7d3455
+          name: RTX3500_LAN2-OUT
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.16.2
+          key: ifOutOctets.2
+          delay: 60s
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+        -
+          uuid: 09352e2fd79242a49c7f3df21c931e56
+          name: RTX3500_LAN3-OUT
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.16.3
+          key: ifOutOctets.3
+          delay: 60s
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+        -
+          uuid: 458bc74df8754bd3874fe53108a5228c
+          name: RTX3500_LAN4-OUT
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.16.4
+          key: ifOutOctets.4
+          delay: 60s
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+        -
+          uuid: ddd0cf541b1d4a74a3cd214f3ec11e74
+          name: RTX3500_FirmwareVersion
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.1182.2.2.3.0
+          key: yrfRevision
+          delay: 3600s
+          trends: '0'
+          value_type: CHAR
+        -
+          uuid: ac6e89af30f7498c91fe1f8e1acab3f0
+          name: RTX3500_Uptime
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.1182.2.2.4.0
+          key: yrfUpTime
+          delay: 60s
+        -
+          uuid: 562b79a0e1cd4883a61102fc06769810
+          name: RTX3500_CPU-Avr(1M)
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.1182.2.1.6.0
+          key: yrhCpuUtil1min
+          delay: 60s
+        -
+          uuid: bf3cf4fb45594d7d925726666cccbd41
+          name: RTX3500_CPU-Avr(5M)
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.1182.2.1.7.0
+          key: yrhCpuUtil5min
+          delay: 60s
+        -
+          uuid: 636ad9ec36bf4472b933fc75958198ea
+          name: RTX3500_CPU-Avr(5S)
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.1182.2.1.5.0
+          key: yrhCpuUtil5sec
+          delay: 60s
+        -
+          uuid: d3c4784f31d84ce5a519e32514a152cc
+          name: RTX3500_InboxTemp
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.1182.2.1.15.0
+          key: yrhInboxTemperature
+          delay: 60s
+          units: ℃
+        -
+          uuid: d815f45da0484de2886a8ff1b060ffcb
+          name: RTX3500_UseMem
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.1182.2.1.4.0
+          key: yrhMemoryUtil
+          delay: 60s
+          units: '%'
+  graphs:
+    -
+      uuid: b8dd0898117c42fda24d1f74d3257746
+      name: RTX3500_CPU+Mem
+      graph_items:
+        -
+          color: EEEE00
+          item:
+            host: Temp_RTX3500
+            key: yrhMemoryUtil
+        -
+          sortorder: '1'
+          color: EE0000
+          item:
+            host: Temp_RTX3500
+            key: yrhCpuUtil5sec
+        -
+          sortorder: '2'
+          color: '009900'
+          item:
+            host: Temp_RTX3500
+            key: yrhCpuUtil1min
+        -
+          sortorder: '3'
+          color: 0000EE
+          item:
+            host: Temp_RTX3500
+            key: yrhCpuUtil5min
+    -
+      uuid: 260ac8ee87ba4f6486042d9aed643630
+      name: RTX3500_InboxTemp
+      graph_items:
+        -
+          drawtype: BOLD_LINE
+          color: EE0000
+          item:
+            host: Temp_RTX3500
+            key: yrhInboxTemperature
+    -
+      uuid: 8cc1ccf5cba646099ffb2e4fd21b53ee
+      name: RTX3500_LAN1
+      graph_items:
+        -
+          color: 0000EE
+          item:
+            host: Temp_RTX3500
+            key: ifInOctets.1
+        -
+          sortorder: '1'
+          color: EE0000
+          item:
+            host: Temp_RTX3500
+            key: ifOutOctets.1
+    -
+      uuid: 7abb3045215d4467b3d95625ff9de306
+      name: RTX3500_LAN2
+      graph_items:
+        -
+          color: 0000EE
+          item:
+            host: Temp_RTX3500
+            key: ifInOctets.2
+        -
+          sortorder: '1'
+          color: EE0000
+          item:
+            host: Temp_RTX3500
+            key: ifOutOctets.2
+    -
+      uuid: d22b476dfc344e69be1e240d625908be
+      name: RTX3500_LAN3
+      graph_items:
+        -
+          color: 0000EE
+          item:
+            host: Temp_RTX3500
+            key: ifInOctets.3
+        -
+          sortorder: '1'
+          color: EE0000
+          item:
+            host: Temp_RTX3500
+            key: ifOutOctets.3
+    -
+      uuid: 9696e57850b74b53b58e7708f1d37480
+      name: RTX3500_LAN4
+      graph_items:
+        -
+          color: 0000EE
+          item:
+            host: Temp_RTX3500
+            key: ifInOctets.4
+        -
+          sortorder: '1'
+          color: EE0000
+          item:
+            host: Temp_RTX3500
+            key: ifOutOctets.4
